@@ -1,0 +1,52 @@
+
+<section class="content-header">
+</section>
+<div class="section-body">
+  <div class="row">
+    <div class="col-12">
+      <div class="buttons">
+      </div>
+      <div class="card">
+        <a routerLink="create-store"  class="btn btn-icon btn-success"  title="Add Store" data-toggle="tooltip" ><i class="fas fa-plus"></i></a>
+        <div class="card-header">
+          <h4>Danh sách cửa hàng</h4>
+        </div>
+        <br />
+        <div class="card-body">
+          <div class="table-responsive">
+            <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" style="width:100%;" class="table table-striped table-hover">
+              <thead>
+              <tr>
+                <th>Id_Store</th>
+                <th>Name_store</th>
+                <th>Username</th>
+                <th>Action</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let store of listStore">
+                <td>{{store.id}}</td>
+                <td>{{store.storeName}}</td>
+                <td>{{store.username}}</td>
+                <td class="row justify-content-center">
+                  <a routerLink="detail-store/{{store.id}}"  class="btn btn-primary btn-action mr-1 "><i class="fas fa-info-circle"></i></a>
+                  <a routerLink="update-store/{{store.id}}"  class="btn btn-primary btn-action mr-1"><li class="fas fa-pencil-alt"></li></a>
+                  <button  class="btn btn-danger btn-action" (click)="delete(store.id)" ><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+

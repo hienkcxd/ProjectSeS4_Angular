@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <a routerLink="create-device" href="#" class="btn btn-icon btn-success"  title="Add User" data-toggle="tooltip" ><i class="fas fa-plus"></i></a>
+      <div class="card-header">
+        <h4>Nhóm Thiết Bị </h4>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <table datatable  [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Group Name</th>
+            <th>Username</th>
+            <th>Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let deviceGroup of deviceGroupList">
+            <td>{{deviceGroup.id}}</td>
+            <td>{{deviceGroup.groupName}}</td>
+            <td>{{deviceGroup.username}}</td>
+            <td class="row justify-content-center">
+              <a routerLink="update-device/{{deviceGroup.id}}" title="Update Device" class="btn btn-primary btn-action mr-1"><i class="fas fa-pencil-alt"></i></a>
+              <button type="submit" (click)="deleteGroup(deviceGroup.id)" title="Delete Device" class="btn btn-danger btn-action"><i class="fas fa-trash"></i></button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- /.card-body -->
+    </div></div></div>

@@ -1,0 +1,65 @@
+<section class="content-header">
+</section>
+<div class="section-body">
+  <div class="row">
+    <div class="col-12">
+      <div class="buttons">
+      </div>
+      <div class="card">
+        <a routerLink="create-noti"  class="btn btn-icon btn-success"  title="Add Notification" data-toggle="tooltip" ><i class="fas fa-plus"></i></a>
+        <div class="card-header">
+          <h4>Danh sách cửa hàng</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table datatable class="table table-striped table-hover" [dtOptions]="dtOptions" style="width:100%;" >
+              <thead>
+              <tr>
+                <th>Seri No</th>
+                <th>Name store</th>
+                <th>Address</th>
+                <th>Mail</th>
+                <th>Action</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>1</td>
+                <td>Cửa Hàng Sách</td>
+                <td> 1/1/1 phường 1 Quận 1 Sài gòn, TPHCM. </td>
+                <td> bookstore@gmail.com</td>
+                <td class="row justify-content-center">
+                  <a routerLink="detail-noti"  class="btn btn-primary btn-action mr-1 "><i class="fas fa-info-circle"></i></a>
+                  <a routerLink="update-noti"  class="btn btn-primary btn-action mr-1"><li class="fas fa-pencil-alt"></li></a>
+                  <a routerLink="delete-noti"  class="btn btn-danger btn-action"><i class="fas fa-trash"></i></a>
+
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Cửa Hàng Giày</td>
+                <td> 2/2/2 phường 2 Quận 2 Sài gòn, TPHCM. </td>
+                <td> shoesstore@gmail.com</td>
+                <td class="row justify-content-center">
+                  <a routerLink="detail-noti" title="Detail Store" class="btn btn-primary btn-action mr-1 "><i class="fas fa-info-circle"></i></a>
+                  <a routerLink="update-noti" title="Update Store" class="btn btn-primary btn-action mr-1"><li class="fas fa-pencil-alt"></li></a>
+                  <a routerLink="delete-noti" title="Delete Store" class="btn btn-danger btn-action"><i class="fas fa-trash"></i></a>
+
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+

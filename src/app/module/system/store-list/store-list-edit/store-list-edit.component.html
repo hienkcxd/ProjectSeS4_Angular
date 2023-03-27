@@ -1,0 +1,38 @@
+<section class="content-header">
+</section>
+<div class="section-body">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h4>Updagte Store</h4>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="updateStore()">
+            <div class="form-group row mb-4">
+              <div class="col-sm-12 col-md-7">
+                <input type="text" name="MaDM" readonly value="{{storeDetail.id}}" [(ngModel)]="storeDetail.id" class="form-control" hidden>
+              </div>
+            </div>
+            <div class="form-group row mb-4">
+              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Store name</label>
+              <div class="col-sm-12 col-md-7">
+                <input type="text" name="MaDM" value="{{storeDetail.storeName}}" [(ngModel)]="storeDetail.storeName" class="form-control">
+              </div>
+            </div>
+            <div class="form-group row mb-4">
+              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">User</label>
+              <div class="col-sm-12 col-md-7">
+                <input type="text" name="MaDM" readonly value="{{storeDetail.username}}" class="form-control">
+              </div>
+            </div>
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="submit" class="btn btn-primary btn-lg"
+                      style="padding-left: 2.5rem; padding-right: 2.5rem;">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

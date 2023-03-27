@@ -1,0 +1,42 @@
+
+<section class="content-header">
+</section>
+<div class="section-body">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h4>Update Videos</h4>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="updateFile()">
+            <div class="form-group row mb-4">
+              <div class="col-sm-12 col-md-7">
+                <input type="text" name="fileId" hidden class="form-control"  value="{{file.id}}"  [(ngModel)]="file.id">
+              </div>
+            </div>
+            <div class="form-group row mb-4">
+              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">File Name</label>
+              <div class="col-sm-12 col-md-7">
+                <input type="text" name="fileName" class="form-control" required [(ngModel)]="file.fileName" value="{{file.fileName}}">
+              </div>
+            </div>
+            <div class="form-group row mb-4">
+              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Link Google</label>
+              <div class="col-sm-12 col-md-7">
+                <input type="text" class="form-control" name="fileLink" required [(ngModel)]="file.urlGoogleDrive" value="{{file.urlGoogleDrive}}">
+              </div>
+            </div>
+            <div class="form-group row mb-4">
+              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+              <div class="col-sm-12 col-md-7">
+                <button type="submit" class="btn btn-primary">Save Videos</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
