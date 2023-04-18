@@ -6,6 +6,7 @@ import {BrowserModule} from "@angular/platform-browser";
 import {DataTablesModule} from "angular-datatables";
 import {RouterLinkWithHref} from "@angular/router";
 import { OperatorHistoryDetailComponent } from './operator-history-detail/operator-history-detail.component';
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -15,10 +16,11 @@ import { OperatorHistoryDetailComponent } from './operator-history-detail/operat
     OperatorHistoryTableComponent,
     OperatorHistoryDetailComponent
   ],
-  imports: [
-    BrowserModule,
-    DataTablesModule,
-    RouterLinkWithHref
-  ]
+    imports: [
+        BrowserModule,
+        DataTablesModule,
+        RouterLinkWithHref,
+        FormsModule
+    ]
 })
 export class OperatorHistoryModule { }

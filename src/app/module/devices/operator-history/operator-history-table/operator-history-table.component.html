@@ -6,25 +6,31 @@
 
         </div>
       </div>
+<div style="margin: auto; width: 50%;border: 3px solid green;padding: 10px">
+    <select [(ngModel)]="albumSelected" (ngModelChange)="fetchDeviceLog($event)" >
+      <option *ngFor="let album of lstAlbums" [value]="album.userId">
+        {{album.userId}}
+      </option>
+    </select>
+</div>
       <!-- /.card-header -->
+
       <div class="card-body">
         <table datatable  [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped">
           <thead>
           <tr>
             <th>ID</th>
-            <th>Device Name</th>
-            <th>Store Name</th>
-            <th>Username</th>
-            <th>Log Content</th>
+            <th>UserID</th>
+            <th>Title</th>
+
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let deviceLog of deviceLogList">
+          <tr *ngFor="let deviceLog of lstAlbums">
             <td>{{deviceLog.id}}</td>
-            <td>{{deviceLog.deviceName}}</td>
-            <td>{{deviceLog.storeName}}</td>
-            <td>{{deviceLog.username}}</td>
-            <td>{{deviceLog.contentLog}}</td>
+            <td>{{deviceLog.userId}}</td>
+            <td>{{deviceLog.title}}</td>
+
           </tr>
           </tbody>
         </table>

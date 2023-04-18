@@ -21,6 +21,7 @@ import { AdminLayoutComponent } from './layout-main/admin-layout/admin-layout.co
 import { UserLayoutComponent } from './layout-main/user-layout/user-layout.component';
 import {ErrorModule} from "./module/error/error.module";
 import {ProfileModule} from "./module/profile/profile.module";
+import {freeApiService} from "./services/freeapi.service";
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import {ProfileModule} from "./module/profile/profile.module";
     RouterLinkModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [freeApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
