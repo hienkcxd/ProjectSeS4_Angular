@@ -41,10 +41,10 @@ export class AuthService {
         alert("success");
       if(this.isRoleAdmin()){
         console.log("vao role admin")
-        this.router.navigate(['/admin/home'])
+        this.router.navigate(['/admin/profile'])
       }else if(this.isRoleUser()){
         console.log("vao role user")
-        this.router.navigate(['/user/home'])
+        this.router.navigate(['/user/profile'])
       }else {
         console.log(this.isRoleAdmin())
         this.router.navigate(['/login'])

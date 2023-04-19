@@ -210,7 +210,7 @@ const routes: Routes = [
 
 
         ]},
-      {path:"home", component: HomeMainComponent},
+      // {path:"home", component: HomeMainComponent},
       {path:"profile", component: ProfileMainComponent},
       {path:"", component: HomeMainComponent},
     ]},

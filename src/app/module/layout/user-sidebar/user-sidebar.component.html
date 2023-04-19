@@ -11,7 +11,7 @@
         <img src="assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a routerLink="/user/profile" class="d-block">Thế Hiển - User</a>
+        <a routerLink="/user/profile" class="d-block">{{userDetail.username}}</a>
       </div>
     </div>
 
@@ -23,14 +23,14 @@
 
         <!-- Quản Lý Hệ Thống -->
         <li class="nav-header">
-          HỆ THỐNG
+          SYSTEM
         </li>
         <!-- Quản Lý Tài Khoản -->
         <li class="nav-item">
           <a routerLink="/user/system/store-list" class="nav-link">
             <i class="nav-icon fas fa-laptop-house"></i>
             <p>
-              Danh Sách Cửa Hàng
+              STORE
             </p>
           </a>
         </li>
@@ -38,7 +38,7 @@
           <a routerLink="/user/system/area-device" class="nav-link">
             <i class="nav-icon fas fa-laptop-house"></i>
             <p>
-              Khu Vực Sử Dụng
+              AREA
             </p>
           </a>
         </li>
@@ -46,7 +46,7 @@
 
         <!-- Quản Lý Nội Dung -->
         <li class="nav-header">
-          NỘI DUNG
+          VIDEO
         </li>
         <li class="nav-item">
           <a routerLink="/user/files/videos" class="nav-link">
@@ -76,13 +76,13 @@
 
         <!-- Quản Lý Thiết Bị -->
         <li class="nav-header">
-          THIẾT BỊ
+          DEVICE
         </li>
         <li class="nav-item">
           <a routerLink="/user/devices/devices-system" class="nav-link">
             <i class="nav-icon fas fa-check-double"></i>
             <p>
-              Thiết Bị
+              DEVICE LIST
             </p>
           </a>
         </li>
@@ -90,7 +90,7 @@
           <a routerLink="/user/devices/group-device" class="nav-link">
             <i class="nav-icon fas fa-laptop-house"></i>
             <p>
-              Nhóm Thiết Bị
+              GROUP DEVICE
             </p>
           </a>
         </li>
@@ -98,7 +98,7 @@
           <a routerLink="/user/devices/content-selector" class="nav-link">
             <i class="nav-icon fas fa-plus-square"></i>
             <p>
-              Gắn Nội Dung
+              ADD CONTENT
             </p>
           </a>
         </li>
