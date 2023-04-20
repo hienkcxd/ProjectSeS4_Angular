@@ -33,12 +33,20 @@ export class DeviceInGroupService {
   getDetailDeviceInGroup(id:string):Observable<any>{
     return this.http.get(`${this.baseUrl()}/device-in-group/${id}`,{headers: this.httpOptions.headers});
   }
+  addContentDeviceInGroup(deviceInGroup:DeviceInGroup):Observable<any>{
+    const transferObject = {
+      username: null,
+      fileName: deviceInGroup.fileName,
+      groupName: deviceInGroup.groupName,
+    }
+    const object = JSON.stringify(transferObject);
+    console.log("json send api"+object)
+    return this.http.post(`${this.baseUrl()}/device-in-group`,object,{headers: this.httpOptions.headers});
+  }
   updateDeviceInGroup(deviceInGroup:DeviceInGroup):Observable<any>{
     const transferObject = {
-      username:deviceInGroup.username,
-      groupName:deviceInGroup.groupName,
-      deviceName:deviceInGroup.deviceName,
-      fileName:deviceInGroup.fileName
+      groupName: deviceInGroup.groupName,
+      fileName : deviceInGroup.fileName,
     }
     const object = JSON.stringify(transferObject);
     console.log("json send api"+object)

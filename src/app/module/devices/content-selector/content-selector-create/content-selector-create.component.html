@@ -6,24 +6,18 @@
           <h4>Add new Content</h4>
         </div>
         <div class="card-body">
-          <form class="" action="#" method="post">
-
+          <form (ngSubmit)="addContent()">
+            <input type="text" name="username" class="form-control" required [(ngModel)]="deviceInGroup.username" hidden>
             <div class="form-group row mb-4">
-              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tên thiết bị </label>
+              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">group name:</label>
               <div class="col-sm-12 col-md-7">
-                <input type="text" name="TenDM" value="sai gon" class="form-control">
+                <input type="text" name="groupName" class="form-control" required [(ngModel)]="deviceInGroup.groupName">
               </div>
             </div>
             <div class="form-group row mb-4">
-              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Id Thiết bị</label>
+              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">file name: </label>
               <div class="col-sm-12 col-md-7">
-                <input type="text" name="TenDM" value="thugo@123" class="form-control">
-              </div>
-            </div>
-            <div class="form-group row mb-4">
-              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tình trạng hoạt động</label>
-              <div class="col-sm-12 col-md-7">
-                <input type="text" name="TenDM" value="1234" class="form-control">
+                <input type="text" name="fileName" class="form-control" required [(ngModel)]="deviceInGroup.fileName">
               </div>
             </div>
 

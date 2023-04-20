@@ -14,6 +14,7 @@ export class ContentSelectorUpdateComponent implements OnInit {
 
   constructor(private deviceInGroupService:DeviceInGroupService, private activatedRoute:ActivatedRoute, private route:Router) { }
   Id!:string;
+  fileNameString!:string
   detail!:DeviceInGroup;
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(data=>{
@@ -31,6 +32,7 @@ export class ContentSelectorUpdateComponent implements OnInit {
   }
 
   updateContent(){
+    this.detail.fileName = this.fileNameString.split(",")
     console.log(this.detail)
     this.deviceInGroupService.updateDeviceInGroup(this.detail).subscribe(data=>{
       alert("thay đổi thành công")

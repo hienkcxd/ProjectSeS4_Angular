@@ -3,7 +3,7 @@ import {FileStorageService} from "../../../../services/Api/file/file-storage.ser
 import {FileStorage} from "../../../../model/file/file-storage.model";
 import {Subject} from "rxjs";
 import {Router} from "@angular/router";
-import {Database, ref, set} from "@angular/fire/database";
+import {Database, onValue, ref, set} from "@angular/fire/database";
 
 @Component({
   selector: 'app-videos-table-form',
@@ -12,7 +12,7 @@ import {Database, ref, set} from "@angular/fire/database";
 })
 export class VideosTableFormComponent implements OnInit,OnDestroy {
 
-  constructor(private fileStorageService:FileStorageService, private route:Router, public database:Database) { }
+  constructor(private fileStorageService:FileStorageService, private route:Router) { }
   dtTrigger: Subject<any> = new Subject<any>();
   listFile!: FileStorage[];
   dtOptions: any = {};
@@ -22,12 +22,18 @@ export class VideosTableFormComponent implements OnInit,OnDestroy {
       this.dtTrigger.next(false);
     })
   }
+
   fetchFileListFirebase(){
-    set(ref(this.database, 'videos/' ), {
-      title: "name",
-      user: "email",
-      videouri : ""
-    });
+    this.fileStorageService.getAllFileFirebase().subscribe(res=>{
+      this.listFile = res.map((e:any)=>{
+        const data = e.payload.doc.data();
+        data.id = e.payload.doc.id;
+        return data
+      });
+      this.dtTrigger.next(false);
+    }, error => {
+      alert('Error while fetching data')
+    })
   }
   ngOnInit(): void {
     this.fetchFileList();

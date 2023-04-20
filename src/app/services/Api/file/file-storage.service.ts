@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {AuthService} from "../../auth.service";
 import {FileStorage} from "../../../model/file/file-storage.model";
-import {Database, set} from "@angular/fire/database";
+import {AngularFirestore} from "@angular/fire/compat/firestore";
 
 
 @Injectable({
@@ -11,7 +11,7 @@ import {Database, set} from "@angular/fire/database";
 })
 export class FileStorageService {
 
-  constructor(private http:HttpClient, private auth:AuthService, database : Database) { }
+  constructor(private http:HttpClient, private auth:AuthService, private  afs:AngularFirestore) { }
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':'application/json',
@@ -26,7 +26,24 @@ export class FileStorageService {
       return "http://localhost:8080/api/admin";
     }
   }
-
+  //add file len firebase
+  addFileFirebase(file:FileStorage){
+    file.id = this.afs.createId();
+    return this.afs.collection('/videos').add(file)
+  }
+  //lay file firebase
+  getAllFileFirebase(){
+    return this.afs.collection('/videos').snapshotChanges();
+  }
+  //delete file
+  deleteFileFirebase(file:FileStorage){
+    return this.afs.doc('/videos'+file.id).delete();
+  }
+  //update file
+  updateFileFirebase(file:FileStorage){
+    this.deleteFileFirebase(file)
+    this.addFileFirebase(file)
+  }
   getAllFile():Observable<any>{
     return this.http.get(`${this.baseUrl()}/file-storage`,{headers: this.httpOptions.headers});
   }
