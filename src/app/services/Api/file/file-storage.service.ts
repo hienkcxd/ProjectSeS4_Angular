@@ -3,13 +3,15 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {AuthService} from "../../auth.service";
 import {FileStorage} from "../../../model/file/file-storage.model";
+import {Database, set} from "@angular/fire/database";
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class FileStorageService {
 
-  constructor(private http:HttpClient, private auth:AuthService) { }
+  constructor(private http:HttpClient, private auth:AuthService, database : Database) { }
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':'application/json',
@@ -28,7 +30,6 @@ export class FileStorageService {
   getAllFile():Observable<any>{
     return this.http.get(`${this.baseUrl()}/file-storage`,{headers: this.httpOptions.headers});
   }
-
   updateFile(file:FileStorage):Observable<any>{
     const transferObject = {
       id: file.id,

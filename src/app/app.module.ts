@@ -21,6 +21,8 @@ import { AdminLayoutComponent } from './layout-main/admin-layout/admin-layout.co
 import { UserLayoutComponent } from './layout-main/user-layout/user-layout.component';
 import {ErrorModule} from "./module/error/error.module";
 import {ProfileModule} from "./module/profile/profile.module";
+import {AngularFireModule} from "@angular/fire/compat";
+import {environment} from "../environments/environment";
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import {ProfileModule} from "./module/profile/profile.module";
     ErrorModule,
     RouterLinkModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],
   bootstrap: [AppComponent]
